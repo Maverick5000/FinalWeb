@@ -7,12 +7,12 @@ router.get('/', function (req, res, next) {
         res.render('login');
     } else {
         var allchannels;
-        Channel.find({})
+        Channel.find({ user : req.user._id })
             .exec()
             .then(docs => {
                 allchannels = docs;
                 console.log(allchannels);
-                res.render('channels', {
+                res.render('mychannels', {
                     title: 'Express',
                     username: req.user.username,
                     channels: allchannels

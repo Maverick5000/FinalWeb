@@ -14,6 +14,7 @@ var app = express();
 
 const videoRoutes = require('./routes/videos');
 const channelRoutes = require('./routes/channels');
+const mychannelsRoutes = require('./routes/mychannels');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const createchannelRouter = require('./routes/createchannel');
@@ -58,6 +59,7 @@ app.use(passport.session());
 
 app.use('/videos', videoRoutes);
 app.use('/channels', channelRoutes);
+app.use('/mychannels', mychannelsRoutes);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/createchannel', createchannelRouter);
