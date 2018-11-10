@@ -4,7 +4,9 @@ const Channel = require('../models/channel');
 var mongoose = require('mongoose');
 
 router.post('/', (req, res, next) => {
-    if (req.user) {
+    if (!req.user) {
+        res.render('login');
+    } else {
         const channel = new Channel({
             _id: new mongoose.Types.ObjectId(),
             nombre: req.body.nombre,
@@ -22,3 +24,5 @@ router.post('/', (req, res, next) => {
         });
     }
 });
+
+module.exports = router;
