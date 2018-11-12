@@ -113,6 +113,7 @@ body {
 
 #channel-container{
   display: flex;
+  justify-content: space-evenly;
 }
 
 /* Mobile Styles */
@@ -141,6 +142,17 @@ body {
     width: 100vw; /* adjust to your needs */
     max-width: 100%; /* to make it responsive */
     height: 200px;
+    margin-top: 5px;
+  }
+
+  iframe:first-child{
+    margin-top: 0;
+  }
+
+  #channel-container{
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 5px;
   }
 }
 
@@ -152,9 +164,16 @@ body {
   }
 
   iframe {
-    width: 700px; /* adjust to your needs */
+    width: 350px; /* adjust to your needs */
     max-width: 100%; /* to make it responsive */
-    height: 400px;
+    height: 200px;
+  }
+
+  #channel-container{
+    width: 100vw;
+    display: inline-block;
+    justify-content: space-evenly;
+    padding: 5px;
   }
 }
 
@@ -166,8 +185,8 @@ body {
   }
 
   iframe {
-    width: 600px; /* adjust to your needs */
+    width: 500px; /* adjust to your needs */
     max-width: 100%; /* to make it responsive */
-    height: 400px;
+    height: 300px;
   }
 }
