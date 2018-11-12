@@ -111,6 +111,10 @@ body {
   float: right;
 }
 
+#channel-container{
+  display: flex;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   .topnav .login-container {
@@ -162,8 +166,8 @@ body {
   }
 
   iframe {
-    width: 1000px; /* adjust to your needs */
+    width: 600px; /* adjust to your needs */
     max-width: 100%; /* to make it responsive */
-    height: 700px;
+    height: 400px;
   }
 }

@@ -1,8 +1,10 @@
 <h1>CHANNELS!</h1>
 {{#each channels}}
-    <h1>{{ this.nombre }}</h1>
+<h1>{{ this.nombre }}</h1>
+<div id="channel-container">
     {{#each this.videos}}
     <iframe width="560" height="315" src="{{this}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+        allowfullscreen></iframe>
     {{/each}}
+</div>
 {{/each}}
