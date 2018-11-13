@@ -18,11 +18,13 @@ const mychannelsRoutes = require('./routes/mychannels');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const createchannelRouter = require('./routes/createchannel');
+const createvideoRouter = require('./routes/createvideo');
 const addvideosRouter = require('./routes/addvideos');
 const APIcreatechannelRouter = require('./API/routes/createchannel');
 const APIdeleteusersRouter = require('./API/routes/deleteusers');
 const APIgetusersRouter = require('./API/routes/getusers');
 const APIaddvideosRouter = require('./API/routes/addvideos');
+const APIcreatevideoRouter = require('./API/routes/createvideo');
 
 
 mongoose.connect('mongodb://admin:78005832@kraussdb-shard-00-00-kaqat.mongodb.net:27017,kraussdb-shard-00-01-kaqat.mongodb.net:27017,kraussdb-shard-00-02-kaqat.mongodb.net:27017/test?ssl=true&replicaSet=KraussDB-shard-0&authSource=admin&retryWrites=true', {
@@ -65,9 +67,11 @@ app.use('/mychannels', mychannelsRoutes);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/createchannel', createchannelRouter);
+app.use('/createvideo', createvideoRouter);
 app.use('/addvideos', addvideosRouter);
 app.use('/api/getusers', APIgetusersRouter);
 app.use('/api/createchannel', APIcreatechannelRouter);
+app.use('/api/createvideo', APIcreatevideoRouter);
 app.use('/api/deleteusers', APIdeleteusersRouter);
 app.use('/api/addvideos', APIaddvideosRouter);
 

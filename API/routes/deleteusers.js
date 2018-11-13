@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../models/user');
+const Video = require('../models/video');
+const Channel = require('../models/channel');
 
 router.get('/', function (req, res, next) {
-  User.remove({})
+  Channel.remove({})
     .exec()
     .then(docs => {
       console.log(docs);

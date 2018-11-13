@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var auth = require("../API/controllers/AuthController.js");
+const Video = require('../API/models/video');
 
 
 // restrict index for logged in user only
@@ -24,15 +25,27 @@ router.get('/logout', auth.logout);
 /* GET home page. */
 router.get('/', function (req, res, next) {
   if (!req.user) {
-    res.render('index', {
-      title: 'Express'
-    });
-  } else {
-    res.render('index', {
-      title: 'Express',
-      username: req.user.username
-    });
-  }
+    res.render('login');
+} else {
+    var allvideos;
+    Video.find({})
+        .exec()
+        .then(docs => {
+            allvideos = docs;
+            console.log(allvideos);
+            res.render('index', {
+                title: 'All Videos',
+                username: req.user.username,
+                videos: allvideos
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            });
+        });
+}
 });
 
 
