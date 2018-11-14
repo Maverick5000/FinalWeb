@@ -24,6 +24,7 @@ const APIcreatechannelRouter = require('./API/routes/createchannel');
 const APIdeleteusersRouter = require('./API/routes/deleteusers');
 const APIgetusersRouter = require('./API/routes/getusers');
 const APIaddvideosRouter = require('./API/routes/addvideos');
+const APIgetvideosRouter = require('./API/routes/getvideos');
 const APIcreatevideoRouter = require('./API/routes/createvideo');
 
 
@@ -74,6 +75,7 @@ app.use('/api/createchannel', APIcreatechannelRouter);
 app.use('/api/createvideo', APIcreatevideoRouter);
 app.use('/api/deleteusers', APIdeleteusersRouter);
 app.use('/api/addvideos', APIaddvideosRouter);
+app.use('/api/getvideos', APIgetvideosRouter);
 
 
 // view engine setup

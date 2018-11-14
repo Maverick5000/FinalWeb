@@ -1,9 +1,10 @@
 <div id="main-content">
-    <h1>{{title}}</h1>
-    {{#each videos}}
-    <h4>{{this.nombre}}</h4>
-    <iframe width="560" height="315" src="{{this.srcUrl}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    <h4>{{this.usernombre}}</h4>
-    {{/each}}
+
 </div>
+<script rel='text/javascript' src='/javascripts/indexT.js' /></script>
+<script id="index-template" type="text/x-handlebars-template">
+ <h4>\{{ title }}</h4>
+    <iframe width="560" height="315" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <h4>\{{ user }}</h4>
+</script>

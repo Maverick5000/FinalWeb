@@ -22,6 +22,8 @@ router.post('/login', auth.doLogin);
 // route for logout action
 router.get('/logout', auth.logout);
 
+router.use("/public",express.static(__dirname + "/public"));
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   if (!req.user) {
@@ -34,9 +36,7 @@ router.get('/', function (req, res, next) {
             allvideos = docs;
             console.log(allvideos);
             res.render('index', {
-                title: 'All Videos',
-                username: req.user.username,
-                videos: allvideos
+                username: req.user.username
             });
         })
         .catch(err => {
