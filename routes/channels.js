@@ -4,26 +4,11 @@ const Channel = require('../API/models/channel');
 
 router.get('/', function (req, res, next) {
     if (!req.user) {
-        res.render('login');
+        res.render('channels');
     } else {
-        var allchannels;
-        Channel.find({})
-            .exec()
-            .then(docs => {
-                allchannels = docs;
-                console.log(allchannels);
-                res.render('channels', {
-                    title: 'Express',
-                    username: req.user.username,
-                    channels: allchannels
-                });
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json({
-                    error: err
-                });
-            });
+        res.render('channels', {
+            username: req.user.username,
+        });
     }
 });
 

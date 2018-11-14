@@ -22,30 +22,17 @@ router.post('/login', auth.doLogin);
 // route for logout action
 router.get('/logout', auth.logout);
 
-router.use("/public",express.static(__dirname + "/public"));
+router.use("/public", express.static(__dirname + "/public"));
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  if (!req.user) {
-    res.render('login');
-} else {
-    var allvideos;
-    Video.find({})
-        .exec()
-        .then(docs => {
-            allvideos = docs;
-            console.log(allvideos);
-            res.render('index', {
-                username: req.user.username
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+    if (!req.user) {
+        res.render('index');
+    } else {
+        res.render('index', {
+            username: req.user.username,
         });
-}
+    }
 });
 
 

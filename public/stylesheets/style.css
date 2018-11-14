@@ -189,4 +189,13 @@ body {
     max-width: 100%; /* to make it responsive */
     height: 300px;
   }
+
+  #main-content{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #item-container{
+    margin: 10px;
+  }
 }
