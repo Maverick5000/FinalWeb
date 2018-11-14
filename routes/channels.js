@@ -8,6 +8,7 @@ router.get('/', function (req, res, next) {
     } else {
         res.render('channels', {
             username: req.user.username,
+            id: req.user._id
         });
     }
 });

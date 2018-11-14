@@ -1,13 +1,20 @@
 <h1>MY CHANNELS!</h1>
-{{#each channels}}
-<form method="GET" action="/addvideos/{{this._id}}">
-    <h1>{{ this.nombre }}</h1>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Add videos</button>
-    <div id="channel-container"></div>
-    {{#each this.videos}}
-    <iframe width="560" height="315" src="{{this}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+<div id="main-content">
+
+</div>
+
+<script rel='text/javascript' src='/javascripts/mychannelsT.js' /></script>
+
+<script id="channel-template" type="text/x-handlebars-template">
+    <div class="channel-container" id="\{{id}}">
+        <h1>\{{ nombre }}</h1>
+    </div>
+</script>
+
+<script id="video-template" type="text/x-handlebars-template">
+    <div id="video-container">
+        <iframe width="560" height="315" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
-    {{/each}}
-    <div id="channel-container"></div>
-</form>
-{{/each}}
+        <h4>\{{user}}</h4>
+    </div>
+</script>

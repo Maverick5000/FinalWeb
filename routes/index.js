@@ -31,6 +31,7 @@ router.get('/', function (req, res, next) {
     } else {
         res.render('index', {
             username: req.user.username,
+            id: req.user._id
         });
     }
 });
