@@ -24,7 +24,7 @@ $(document).ready(function () {
                     id: id,
                 }
 
-                $("#main-content").append(template(context));
+                $("#main-content-channels").append(template(context));
 
                 item.videos.forEach(function (url) {
                     var context2 = {

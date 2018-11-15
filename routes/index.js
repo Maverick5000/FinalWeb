@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var auth = require("../API/controllers/AuthController.js");
 const Video = require('../API/models/video');
+var passport = require("passport");
 
 
 // restrict index for logged in user only
@@ -17,7 +18,8 @@ router.post('/register', auth.doRegister);
 router.get('/login', auth.login);
 
 // route for login action
-router.post('/login', auth.doLogin);
+//router.post('/login', auth.doLogin);
+router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
 // route for logout action
 router.get('/logout', auth.logout);
