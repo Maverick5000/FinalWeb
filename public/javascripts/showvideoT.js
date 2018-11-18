@@ -15,12 +15,14 @@ $(document).ready(function () {
 
                 var titulo = item.nombre;
                 var url = item.srcUrl;
-                var username = item.usernombre
+                var username = item.usernombre;;
+                var descripcion = item.descripcion;
 
                 var context = {
                     title: titulo,
                     url: url,
-                    user: username
+                    user: username,
+                    descripcion: descripcion
                 }
 
                 $("#main-content").append(template(context));

@@ -11,6 +11,7 @@ router.post('/', (req, res, next) => {
             _id: new mongoose.Types.ObjectId(),
             srcUrl: req.body.url,
             nombre: req.body.nombreVid,
+            descripcion: req.body.descripcion,
             user: req.user._id,
             usernombre: req.user.username
         });

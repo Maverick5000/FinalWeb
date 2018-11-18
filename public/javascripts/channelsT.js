@@ -6,35 +6,59 @@ $(document).ready(function () {
         url: "/api/getchannels",
         success: function (channels) {
             var source = $('#channel-template').html();
-            var sourceV = $('#video-template').html();
             var template = Handlebars.compile(source);
-            var template2 = Handlebars.compile(sourceV);
+
 
             channels.forEach(function (item) {
 
+                var videoList = item.videos;
                 var titulo = item.nombre;
-                var username = item.user;
-                var id = item._id;
+                var channelId = item._id;
 
                 var context = {
                     nombre: titulo,
-                    id: id,
+                    id: channelId
                 }
 
                 $("#main-content-channels").append(template(context));
 
-                item.videos.forEach(function (url) {
-                    var context2 = {
-                        url: url,
-                        user: username
-                    }
-
-                    $("#" + id).append(template2(context2));
-                });
+                fill(videoList, channelId);
 
             });
         }
     });
 
-});
+    function fill(videoList, channelId) {
+        var sourceV = $('#video-template').html();
+        var template2 = Handlebars.compile(sourceV);
+        
+        videoList.forEach(function (videoId) {
+            $.ajax({
+                type: "GET",
+                url: "/api/getvideos/" + videoId,
+                success: function (videoInfo) {
 
+
+                    var titulo = videoInfo[0].nombre;
+                    var url = videoInfo[0].srcUrl;
+                    var username = videoInfo[0].usernombre;
+                    var descripcion = videoInfo[0].descripcion;
+                    var vidId = videoInfo[0]._id;
+
+                    var context2 = {
+                        title: titulo,
+                        url: url,
+                        user: username,
+                        descripcion: descripcion,
+                        id: vidId
+                    }
+
+
+                    $("#" + channelId).append(template2(context2));
+                }
+            });
+
+        });
+    }
+
+});

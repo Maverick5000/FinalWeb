@@ -133,9 +133,18 @@ body {
 
 #item-container{
   color: white;
+  display: grid;
 }
 
 #item-container a{
+  color: white;
+  font-family: 'Roboto Slab', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#video-container a{
   color: white;
   font-family: 'Roboto Slab', sans-serif;
   text-transform: uppercase;
@@ -160,7 +169,8 @@ h1{
   .topnav a,
   .topnav input[type=text],
   .topnav input[type=password],
-  .topnav .login-container button {
+  .topnav .login-container button,
+  .topnav textarea {
     float: none;
     display: block;
     text-align: left;
@@ -214,6 +224,7 @@ h1{
   #main-content{
     padding: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
 
@@ -239,9 +250,14 @@ h1{
 
   #video-container{
     margin: 5px;
+    display: grid;
   }
 
   #item-container a{
     font-size: 25px;
+  }
+
+  textarea {
+    padding: 10px;
   }
 }
