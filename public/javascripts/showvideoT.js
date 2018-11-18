@@ -1,25 +1,26 @@
 $(document).ready(function () {
     console.log("ready!");
 
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+
     $.ajax({
         type: "GET",
-        url: "/api/getvideos",
-        success: function (videos) {
+        url: "/api/getvideos/" + id,
+        success: function (video) {
             var source = $('#index-template').html();
             var template = Handlebars.compile(source);
 
-            videos.forEach(function(item) {
+            video.forEach(function(item) {
 
                 var titulo = item.nombre;
                 var url = item.srcUrl;
-                var username = item.usernombre;
-                var id = item._id;
+                var username = item.usernombre
 
                 var context = {
                     title: titulo,
                     url: url,
-                    user: username,
-                    id: id
+                    user: username
                 }
 
                 $("#main-content").append(template(context));

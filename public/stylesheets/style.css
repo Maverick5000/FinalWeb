@@ -125,6 +125,10 @@ body {
   color: white;
 }
 
+#item-container a{
+  color: white;
+}
+
 .channel-container{
   color: white;
 }
