@@ -20,12 +20,14 @@ const usersRouter = require('./routes/users');
 const createchannelRouter = require('./routes/createchannel');
 const createvideoRouter = require('./routes/createvideo');
 const addvideosRouter = require('./routes/addvideos');
+const myvideosRouter = require('./routes/myvideos');
 const APIcreatechannelRouter = require('./API/routes/createchannel');
 const APIgetchannelsRouter = require('./API/routes/getchannels');
 const APIdeleteusersRouter = require('./API/routes/deleteusers');
 const APIgetusersRouter = require('./API/routes/getusers');
 const APIaddvideosRouter = require('./API/routes/addvideos');
 const APIgetvideosRouter = require('./API/routes/getvideos');
+const APIgetmyvideosRouter = require('./API/routes/getmyvideos');
 const APIcreatevideoRouter = require('./API/routes/createvideo');
 
 
@@ -64,6 +66,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/videos', videoRoutes);
+app.use('/myvideos', myvideosRouter);
 app.use('/channels', channelRoutes);
 app.use('/mychannels', mychannelsRoutes);
 app.use('/', indexRouter);
@@ -78,6 +81,7 @@ app.use('/api/createvideo', APIcreatevideoRouter);
 app.use('/api/deleteusers', APIdeleteusersRouter);
 app.use('/api/addvideos', APIaddvideosRouter);
 app.use('/api/getvideos', APIgetvideosRouter);
+app.use('/api/getmyvideos', APIgetmyvideosRouter);
 
 
 // view engine setup
