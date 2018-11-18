@@ -8,7 +8,8 @@ router.get('/', function (req, res, next) {
   } else {
     res.render('createvideo', {
       title: 'Express',
-      username: req.user.username
+      username: req.user.username,
+      id: req.user._id
     });
   }
 });
