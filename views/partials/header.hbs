@@ -1,11 +1,16 @@
 <div class="topnav">
+  <img src="images/logo.png" alt="">
   <a class="active" href="/">Home</a>
   <a href="/channels">Channels</a>
+  {{#if username}}
   <a href="/mychannels/{{id}}">My Channel</a>
+  <a href="/mychannels/{{id}}">My Videos</a>
+  <a href="/createvideo">Add Video</a>
+  {{/if}}
   {{#if username}}
   <div class="login-container">
-  <a href="/">Logged as: {{username}}</a>
-  <a href="/logout">Logout</a>
+    <a href="/">Logged as : {{username}}</a>
+    <a href="/logout">Logout</a>
   </div>
   {{else}}
   <div class="login-container">

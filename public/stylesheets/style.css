@@ -1,10 +1,11 @@
 * {
   box-sizing: border-box;
+  font-family:'Roboto Slab', sans-serif;
 }
 
 body {
   text-align: center;
-  background-color: #121212;
+  background-image: url("../images/background.jpeg");
 }
 
 .form-signin-heading{
@@ -17,8 +18,16 @@ body {
   background-color: #232323;
 }
 
+.topnav img {
+  margin-top: 4px;
+  margin-left: 4px;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
 /* Navbar links */
-.topnav a {
+.topnav a, li {
   float: left;
   display: block;
   color: #E6E6E6;
@@ -34,11 +43,12 @@ body {
   color: black;
 }
 
-/* Active/current link */
+/* Active/current link 
 .topnav a.active {
   background-color: #333333;
   color: white;
 }
+*/
 
 /* Style the input container */
 .topnav .login-container {
@@ -127,6 +137,10 @@ body {
 
 #item-container a{
   color: white;
+  font-family: 'Roboto Slab', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .channel-container{
@@ -225,5 +239,9 @@ h1{
 
   #video-container{
     margin: 5px;
+  }
+
+  #item-container a{
+    font-size: 25px;
   }
 }
