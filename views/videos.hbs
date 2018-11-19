@@ -7,14 +7,16 @@
 
 <script id="index-template" type="text/x-handlebars-template">
     <div id="item-container">
-        <iframe width="560" height="315" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        <div id="video-info">
+        <iframe width="800" height="600" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <h2>\{{ title }}</h2>
         <p>\{{ descripcion }}</p>
         <h4>\{{ user }}</h4>
+        </div>
         <div id="comments-container">
         </div>
-<form name="addcomments" class="form-signin" role="form" action="/api/getcomments/{{id}}" method="post">
+<form name="addcomments" class="form-comments" role="form" action="/api/getcomments/{{id}}" method="post">
   <input class="form-control" type="text" name="texto" id="inputTexto" placeholder="Escribir Comentario" required="required"
         autofocus="autofocus" />
   <button class="btn btn-lg btn-primary btn-block" type="submit">Add Comment</button>
@@ -25,6 +27,6 @@
 <script id="comment-template" type="text/x-handlebars-template">
     <div id="comment">
         <p>\{{texto}}</p>
-        <h4>\{{username}}</h4><h4>\{{fecha}}</h4>
+        <h3>\{{username}}</h3><h3>\{{fecha}}</h3>
     </div>
 </script>

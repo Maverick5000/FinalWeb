@@ -90,6 +90,12 @@ body {
   flex-direction: column;
 }
 
+.form-comments {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
@@ -131,12 +137,12 @@ body {
   justify-content: space-evenly;
 }
 
-#item-container{
-  color: white;
-  display: grid;
+#item-container-index{
+  display: flex;
+  flex-direction: column;
 }
 
-#item-container a{
+#item-container,#item-container-index a{
   color: white;
   font-family: 'Roboto Slab', sans-serif;
   text-transform: uppercase;
@@ -156,14 +162,16 @@ body {
   color: white;
 }
 
-h1{
+h1, h4{
   color: white;
 }
 
 #comment{
   background-color: #232323;
-  padding: 5px;
-  margin: 5px;
+}
+
+#video-info{
+  background-color: #232323;
 }
 
 /* Mobile Styles */
@@ -252,6 +260,7 @@ h1{
 
   #item-container{
     margin: 10px;
+    width: 1000px;
   }
 
   #video-container{
@@ -259,11 +268,26 @@ h1{
     display: grid;
   }
 
-  #item-container a{
+  #item-container a, #item-container-index a{
     font-size: 25px;
   }
 
   textarea {
     padding: 10px;
+  }
+
+  #comment{
+    padding: 5px;
+    margin: 20px;
+  }
+  
+  #video-info{
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .form-comments {
+    padding: 30px;
   }
 }
