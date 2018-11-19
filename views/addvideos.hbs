@@ -1,5 +1,8 @@
 <form name="addvideos" class="form-signin" role="form" action="/api/addvideos/{{id}}" method="post">
   <h2 class="form-signin-heading">Add Videos here</h2>
+  <input class="form-control" type="text" name="nombreVid" id="inputNameVid" placeholder="Nombre del Video" required="required"
+        autofocus="autofocus" />
   <input class="form-control" type="text" name="url" placeholder="Url" />
+  <textarea placeholder="Ingresar descripcion del video..." rows = "5" cols = "60" name = "descripcion"></textarea>
   <button class="btn btn-lg btn-primary btn-block" type="submit">Add video</button>
 </form>
