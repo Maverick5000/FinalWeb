@@ -305,6 +305,12 @@ h4 {
     flex-direction: column;
   }
 
+  #item-container h2,p{
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+  }
+
   #video-container {
     margin: 5px;
     display: grid;

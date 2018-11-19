@@ -2,7 +2,22 @@
   <h2 class="form-signin-heading">Add Videos here</h2>
   <input class="form-control" type="text" name="nombreVid" id="inputNameVid" placeholder="Nombre del Video" required="required"
         autofocus="autofocus" />
-  <input class="form-control" type="text" name="url" placeholder="Url" />
+  <input class="form-control" type="text" id="inputurl" name="url" placeholder="Url" />
   <textarea placeholder="Ingresar descripcion del video..." rows = "5" cols = "60" name = "descripcion"></textarea>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Add video</button>
+  <button id="btn-create" class="btn btn-lg btn-primary btn-block" type="submit">Add video</button>
 </form>
+
+
+<script>
+
+    $("#btn-create").click(function () {
+        var url = $("#inputurl").val();
+        var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+        console.log(JSON.stringify(videoid));
+        if (videoid != null)
+            var newUrl = "https://www.youtube.com/embed/" + videoid[1];
+        $("#inputurl").val(newUrl);
+        console.log(newUrl);
+    });
+
+</script>

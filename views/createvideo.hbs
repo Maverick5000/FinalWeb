@@ -1,7 +1,21 @@
 <form class="form-signin" role="form" action="/api/createvideo" method="post">
-        <input class="form-control" type="text" name="nombreVid" id="inputNameVid" placeholder="Nombre del Video" required="required"
+    <input class="form-control" type="text" name="nombreVid" id="inputNameVid" placeholder="Nombre del Video" required="required"
         autofocus="autofocus" />
     <input class="form-control" type="text" name="url" id="inputurl" placeholder="Url" required="required" />
-    <textarea placeholder="Ingresar descripcion del video..." rows = "5" cols = "60" name = "descripcion"></textarea>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">CREATE</button>
+    <textarea placeholder="Ingresar descripcion del video..." rows="5" cols="60" name="descripcion"></textarea>
+    <button id="btn-create" class="btn btn-lg btn-primary btn-block" type="submit">CREATE</button>
 </form>
+
+<script>
+
+    $("#btn-create").click(function () {
+        var url = $("#inputurl").val();
+        var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+        console.log(JSON.stringify(videoid));
+        if (videoid != null)
+            var newUrl = "https://www.youtube.com/embed/" + videoid[1];
+        $("#inputurl").val(newUrl);
+        console.log(newUrl);
+    });
+
+</script>
