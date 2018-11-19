@@ -332,8 +332,18 @@ h4 {
 
   #video-info {
     margin-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 30px;
     padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  #video-info iframe{
+    width: 800px;
+    /* adjust to your needs */
+    max-width: 100%;
+    /* to make it responsive */
+    height: 500px;
   }
 
   .form-comments {
