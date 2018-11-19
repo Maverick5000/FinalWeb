@@ -27,8 +27,36 @@ $(document).ready(function () {
 
                 $("#main-content").append(template(context));
 
+                getComments();
             });
         }
     });
+
+    function getComments(){
+        $.ajax({
+            type: "GET",
+            url: "/api/getcomments/" + id,
+            success: function (comment) {
+                var source = $('#comment-template').html();
+                var template = Handlebars.compile(source);
+    
+                comment.forEach(function(item) {
+    
+                    var texto = item.texto;
+                    var fecha = item.fecha;
+                    var username = item.usernombre;
+    
+                    var context = {
+                        texto: texto,
+                        fecha: fecha,
+                        username: username
+                    }
+    
+                    $("#comments-container").append(template(context));
+    
+                });
+            }
+        });
+    }
 
 });

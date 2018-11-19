@@ -29,6 +29,7 @@ const APIaddvideosRouter = require('./API/routes/addvideos');
 const APIgetvideosRouter = require('./API/routes/getvideos');
 const APIgetmyvideosRouter = require('./API/routes/getmyvideos');
 const APIcreatevideoRouter = require('./API/routes/createvideo');
+const APIgetcommentsRouter = require('./API/routes/getcomments');
 
 
 mongoose.connect('mongodb://admin:78005832@kraussdb-shard-00-00-kaqat.mongodb.net:27017,kraussdb-shard-00-01-kaqat.mongodb.net:27017,kraussdb-shard-00-02-kaqat.mongodb.net:27017/test?ssl=true&replicaSet=KraussDB-shard-0&authSource=admin&retryWrites=true', {
@@ -82,6 +83,7 @@ app.use('/api/deleteusers', APIdeleteusersRouter);
 app.use('/api/addvideos', APIaddvideosRouter);
 app.use('/api/getvideos', APIgetvideosRouter);
 app.use('/api/getmyvideos', APIgetmyvideosRouter);
+app.use('/api/getcomments', APIgetcommentsRouter);
 
 
 // view engine setup

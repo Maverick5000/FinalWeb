@@ -12,5 +12,19 @@
         <h2>\{{ title }}</h2>
         <p>\{{ descripcion }}</p>
         <h4>\{{ user }}</h4>
+        <div id="comments-container">
+        </div>
+<form name="addcomments" class="form-signin" role="form" action="/api/getcomments/{{id}}" method="post">
+  <input class="form-control" type="text" name="texto" id="inputTexto" placeholder="Escribir Comentario" required="required"
+        autofocus="autofocus" />
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Add Comment</button>
+</form>
+    </div>
+</script>
+
+<script id="comment-template" type="text/x-handlebars-template">
+    <div id="comment">
+        <p>\{{texto}}</p>
+        <h4>\{{username}}</h4><h4>\{{fecha}}</h4>
     </div>
 </script>
