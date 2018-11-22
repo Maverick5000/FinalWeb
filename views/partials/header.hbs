@@ -2,6 +2,9 @@
   <img src="../images/logo.png" alt="">
   <a class="active" href="/">Home</a>
   <a href="/channels">Channels</a>
+  {{#unless username}}
+  <a href="/register">Register</a>
+  {{/unless}}
   {{#if username}}
   <a href="/mychannels/{{id}}">My Channels</a>
   <a href="/createchannel">Create Channel</a>
