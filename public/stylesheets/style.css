@@ -218,6 +218,27 @@ h4 {
     margin-right: auto;
     margin-left: auto;
   }
+
+  .form-create {
+    display: flex;
+    flex-direction: column;
+    background-color: #232323;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  .form-create input,
+  textarea,
+  button {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .form-create button {
+    margin-top: 10px;
+  }
 }
 
 /* Tablet Styles */
@@ -266,6 +287,29 @@ h4 {
   #item-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .form-create {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #232323;
+    border-radius: 5px;
+    width: 500px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-create input,
+  textarea,
+  button {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .form-create button {
+    margin-top: 10px;
   }
 }
 
