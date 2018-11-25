@@ -3,8 +3,8 @@ var router = express.Router();
 const Video = require('../models/video');
 
 
-router.get('/', function (req, res, next) {
-    Video.find({nombre: { $regex: '.*' + req.query.search + '.*' }})
+router.get('/:text', function (req, res, next) {
+    Video.find({nombre: { $regex: '.*' + req.params.text + '.*' }})
         .exec()
         .then(docs => {
             res.status(200).json(docs);
