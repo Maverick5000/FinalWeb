@@ -25,8 +25,7 @@ router.post('/', (req, res, next) => {
                 videos: vId
             });
             channel.save().then(result => {
-                    console.log(result);
-                    console.log('CREATED CHANNEL');
+                res.redirect('/mychannels/'+req.user._id);
                 })
                 .catch(err => console.log(err));
 

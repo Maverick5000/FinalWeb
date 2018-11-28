@@ -21,16 +21,10 @@ router.post('/:channelId', function (req, res, next) {
   video.save().then(result => {
     vidId = result._id;
     channel = req.params.channelId;
-    console.log("PRINT VIDEO ID "+vidId);
-    console.log("PRINT CHANNEL ID "+channel);
     Channel.findByIdAndUpdate( {_id: channel} , {$push: {videos:vidId}}, { new: true })
     .exec()
     .then(docs => {
-      console.log(docs);
-      res.render('mychannels', {
-        title: 'Express',
-        username: req.user.username
-    });
+      res.redirect('/mychannels/'+req.user._id);
     })
     .catch(err => {
       console.log(err);

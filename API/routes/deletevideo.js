@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const Channel = require('../models/channel');
+const Video = require('../models/video');
 
-router.get('/', function (req, res, next) {
-  Channel.remove({})
+router.post('/:videoId', function (req, res, next) {
+    Video.findByIdAndRemove(req.params.videoId)
     .exec()
     .then(docs => {
-      console.log(docs);
-      res.status(200).json(docs);
+        res.redirect('/myvideos/'+req.user._id);
     })
     .catch(err => {
       console.log(err);

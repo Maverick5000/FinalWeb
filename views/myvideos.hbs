@@ -6,6 +6,8 @@
 
 <script id="index-template" type="text/x-handlebars-template">
     <div id="item-container">
+        <form method="POST" action="/api/deletevideo/\{{id}}"><button class="btn btn-lg btn-primary btn-block" type="submit">Delete Video</button>
+</form>
         <iframe width="560" height="315" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <a href="/videos/\{{ id }}">\{{ title }}</a>

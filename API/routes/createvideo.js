@@ -16,8 +16,7 @@ router.post('/', (req, res, next) => {
             usernombre: req.user.username
         });
         video.save().then(result => {
-                console.log(result);
-                console.log('CREATED VIDEO');
+            res.redirect('/myvideos/'+req.user._id);
             })
             .catch(err => console.log(err));
 
