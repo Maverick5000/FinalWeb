@@ -36,6 +36,14 @@ body {
   float: left;
 }
 
+#comment {
+  color: white;
+}
+
+h2, p {
+  color: white;
+}
+
 .topnav a,
 li {
   float: left;
@@ -228,6 +236,14 @@ h4 {
     padding: 5px;
   }
 
+  .form-comments button {
+    margin-top: 5px;
+  }
+
+  .form-comments{
+    padding: 5px;
+  }
+
   .topnav img {
     display: block;
     float: none;
@@ -259,19 +275,21 @@ h4 {
   .topnav .search-container {
     float: none;
   }
+
+  #main-content{
+    padding: 5px;
+  }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 
   iframe {
-    width: 250px;
-    /* adjust to your needs */
-    max-width: 100%;
-    /* to make it responsive */
+    width: 50vw;
     height: 200px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
   }
 
   #channel-container {
@@ -339,6 +357,34 @@ h4 {
   .topnav .search-container {
     font-size: 10px;
   }
+
+  #comments-container{
+    width: 70vw;
+  }
+
+  .form-comments {
+    padding: 30px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .form-comments button {
+    width: 100px;
+    margin-left: 10px;
+  }
+
+  .form-comments input {
+    width: 500px;
+  }
+
+  #comment {
+    padding: 5px;
+    margin: 20px;
+    border-radius: 5px;
+    color: white;
+  }
 }
 
 /* Desktop Styles */
@@ -402,6 +448,7 @@ h4 {
     padding: 5px;
     margin: 20px;
     border-radius: 5px;
+    color: white;
   }
 
   #video-info {

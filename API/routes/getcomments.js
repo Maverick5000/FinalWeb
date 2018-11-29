@@ -43,14 +43,9 @@ router.post('/:videoId', (req, res, next) => {
             video: req.params.videoId
         });
         comment.save().then(result => {
-                console.log(result);
-                console.log('CREATED COMMENT');
+            res.redirect('/myvideos/'+req.user._id);
             })
             .catch(err => console.log(err));
-
-        res.status(201).json({
-            message: 'Handling POST requests to /Create video'
-        });
     }
 });
 
