@@ -1,0 +1,33 @@
+<div id="content">
+
+</div>
+
+<script rel='text/javascript' src='/javascripts/editvideoT.js' />
+</script>
+
+<script>
+
+    $("#btn-edit").click(function () {
+
+        var url = $("#inputurl").val();
+        var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+        console.log(JSON.stringify(videoid));
+        if (videoid != null)
+            var newUrl = "https://www.youtube.com/embed/" + videoid[1];
+        $("#inputurl").val(newUrl);
+
+    });
+
+</script>
+
+<script id="edit-template" type="text/x-handlebars-template">
+
+    <form class="form-create" role="form" action="/api/editvideos/{{id}}" method="post">
+    <input class="form-control" type="text" name="nombreVid" id="thetitle" placeholder="Nombre del Video" required="required"
+        autofocus="autofocus" value="\{{title}}" />
+    <input class="form-control" type="text" name="url" id="inputurl" placeholder="Url" required="required" value="\{{url}}" />
+    <textarea id="description" placeholder="Ingresar descripcion del video..." rows="5" cols="60" name="descripcion">\{{descripcion}}</textarea>
+    <button id="btn-edit" class="btn btn-lg btn-primary btn-block" type="submit">EDIT</button>
+</form>
+
+</script>

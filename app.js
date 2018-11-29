@@ -22,6 +22,8 @@ const createvideoRouter = require('./routes/createvideo');
 const addvideosRouter = require('./routes/addvideos');
 const myvideosRouter = require('./routes/myvideos');
 const resultRouter = require('./routes/result');
+const editvideosRouter = require('./routes/editvideos');
+
 const APIcreatechannelRouter = require('./API/routes/createchannel');
 const APIgetchannelsRouter = require('./API/routes/getchannels');
 const APIdeleteusersRouter = require('./API/routes/deleteusers');
@@ -33,6 +35,7 @@ const APIcreatevideoRouter = require('./API/routes/createvideo');
 const APIgetcommentsRouter = require('./API/routes/getcomments');
 const APIsearchRouter = require('./API/routes/search');
 const APIdeletevideoRouter = require('./API/routes/deletevideo');
+const APIeditvideosRouter = require('./API/routes/editvideos');
 
 mongoose.connect('mongodb://admin:78005832@kraussdb-shard-00-00-kaqat.mongodb.net:27017,kraussdb-shard-00-01-kaqat.mongodb.net:27017,kraussdb-shard-00-02-kaqat.mongodb.net:27017/test?ssl=true&replicaSet=KraussDB-shard-0&authSource=admin&retryWrites=true', {
   useNewUrlParser: true
@@ -78,6 +81,8 @@ app.use('/createchannel', createchannelRouter);
 app.use('/createvideo', createvideoRouter);
 app.use('/addvideos', addvideosRouter);
 app.use('/result', resultRouter);
+app.use('/editvideos', editvideosRouter);
+
 app.use('/api/getusers', APIgetusersRouter);
 app.use('/api/createchannel', APIcreatechannelRouter);
 app.use('/api/getchannels', APIgetchannelsRouter);
@@ -89,6 +94,7 @@ app.use('/api/getmyvideos', APIgetmyvideosRouter);
 app.use('/api/getcomments', APIgetcommentsRouter);
 app.use('/api/search', APIsearchRouter);
 app.use('/api/deletevideo', APIdeletevideoRouter);
+app.use('/api/editvideos', APIeditvideosRouter);
 
 
 // view engine setup

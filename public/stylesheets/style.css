@@ -3,7 +3,12 @@
   font-family: 'Roboto Slab', sans-serif;
 }
 
-#btn {
+#menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#btn, #btn-edit {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 17px;
   border: none;

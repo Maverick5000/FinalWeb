@@ -6,11 +6,16 @@
 
 <script id="index-template" type="text/x-handlebars-template">
     <div id="item-container">
+        <div id="menu">
         <form method="POST" action="/api/deletevideo/\{{id}}"><button id="btn" class="btn btn-lg btn-primary btn-block" type="submit">Delete Video</button>
-</form>
+        </form>
+        <form method="GET" action="/editvideos/\{{id}}">
+        <button id="btn-edit" class="btn btn-lg btn-primary btn-block" type="submit">Edit Video</button>
+        </form>
+        </div>
         <iframe width="560" height="315" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <a href="/videos/\{{ id }}">\{{ title }}</a>
-        <h4>\{{ user }}</h4>
+        <h4>Created by : \{{ user }}</h4>
     </div>
 </script>
