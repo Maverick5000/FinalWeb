@@ -3,6 +3,17 @@
   font-family: 'Roboto Slab', sans-serif;
 }
 
+#btn {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 17px;
+  border: none;
+  padding: 6px;
+}
+
+input[type=text], input[type=password]{
+  border-radius: 10px;
+}
+
 body {
   text-align: center;
   background-image: url("../images/background.jpeg");
@@ -69,7 +80,8 @@ li {
   float: right;
   padding: 6px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-right: 10px;
+  margin-left: 5px;
   background: #ddd;
   font-size: 17px;
   border: none;
