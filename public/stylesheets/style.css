@@ -284,13 +284,17 @@ h4 {
   #main-content{
     padding: 5px;
   }
+
+  #content{
+    padding: 5px;
+  }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 
   iframe {
-    width: 50vw;
+    width: 45vw;
     height: 200px;
     margin-left: auto;
     margin-right: auto;
