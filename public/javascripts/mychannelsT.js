@@ -25,6 +25,8 @@ $(document).ready(function () {
 
                 $("#main-content-channels").append(template(context));
 
+                
+
                 fill(videoList, channelId);
 
             });

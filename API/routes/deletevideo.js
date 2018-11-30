@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Video = require('../models/video');
+const Channel = require('../models/channel');
 
 router.post('/:videoId', function (req, res, next) {
     Video.findByIdAndRemove(req.params.videoId)

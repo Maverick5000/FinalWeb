@@ -19,10 +19,6 @@ router.post('/', (req, res, next) => {
             res.redirect('/myvideos/'+req.user._id);
             })
             .catch(err => console.log(err));
-
-        res.status(201).json({
-            message: 'Handling POST requests to /Create video'
-        });
     }
 });
 
