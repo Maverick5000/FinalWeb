@@ -8,9 +8,10 @@
 <script id="index-template" type="text/x-handlebars-template">
     <div id="item-container">
         <div id="video-info">
+        <h2>\{{ title }}</h2>
         <iframe width="800" height="600" src="\{{url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-        <h2>\{{ title }}</h2>
+        
         <p>\{{ descripcion }}</p>
         <h4>Created by : \{{ user }}</h4>
         </div>
@@ -27,6 +28,6 @@
 <script id="comment-template" type="text/x-handlebars-template">
     <div id="comment">
         <p>\{{texto}}</p>
-        <h3>\{{username}}</h3><h3>\{{fecha}}</h3>
+        <h3>By : \{{username}}</h3><h3>\{{fecha}}</h3>
     </div>
 </script>

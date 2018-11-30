@@ -1,12 +1,11 @@
 <form class="form-create" role="form" action="/api/createchannel" method="post">
+    <h2>CREATE A CHANNEL</h2>
     <input class="form-control" type="text" name="nombre" id="inputName" placeholder="Nombre del Canal" required="required"
         autofocus="autofocus" />
         <input class="form-control" type="text" name="nombreVid" id="inputNameVid" placeholder="Nombre del Video" required="required"
         autofocus="autofocus" />
     <input class="form-control" type="text" name="url" id="inputurl" placeholder="Url" required="required" />
-    <textarea placeholder="Ingresar descripcion del video..." rows = "5" cols = "60" name = "descripcion">
-            
-         </textarea>
+    <textarea placeholder="Ingresar descripcion del video..." rows = "5" cols = "60" name = "descripcion"></textarea>
     <button id="btn-create" class="btn btn-lg btn-primary btn-block" type="submit">CREATE</button>
 </form>
 

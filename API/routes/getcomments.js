@@ -43,7 +43,7 @@ router.post('/:videoId', (req, res, next) => {
             video: req.params.videoId
         });
         comment.save().then(result => {
-            res.redirect('/myvideos/'+req.user._id);
+            res.redirect('/videos/'+req.params.videoId);
             })
             .catch(err => console.log(err));
     }

@@ -43,12 +43,12 @@ $(document).ready(function () {
                 comment.forEach(function(item) {
     
                     var texto = item.texto;
-                    var fecha = item.fecha;
+                    var fecha = new Date(item.fecha);
                     var username = item.usernombre;
     
                     var context = {
                         texto: texto,
-                        fecha: fecha,
+                        fecha: fecha.toUTCString(),
                         username: username
                     }
     
